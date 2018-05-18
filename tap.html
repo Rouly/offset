@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+ <title>touchExample</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+ 
+ <style>
+  #touchDiv{
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   top: 20px;
+   left: 20px;
+   text-align: center;
+   line-height: 50px;
+   color:white;
+   border-radius: 50%;
+   background-color: red;
+  }
+ </style>
+</head>
+<body>
+ <div id="touchDiv">点我</div>
+ <script>
+  var touchDiv = document.getElementById("touchDiv");
+  var x,y;
+  touchDiv.addEventListener("touchstart",canDrag);
+  touchDiv.addEventListener("touchmove",drag);
+  touchDiv.addEventListener("touchend",nodrag);
+  function canDrag (e) {
+   console.log("god开始");
+  }
+  function drag (e) {
+  	
+  	touchDiv.style.top=e.touches[0].pageY-25+'px'
+  	touchDiv.style.left=e.touches[0].pageX-25+'px'
+// $("#touchDiv").css("left",e.touches[0].pageX-25);
+// $("#touchDiv").css("top",e.touches[0].pageY-25);
+  }
+  function nodrag () {
+   console.log("god结束");
+  }
+ </script>
+</body>
+</html>
+ 
