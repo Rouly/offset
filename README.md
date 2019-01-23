@@ -1,4 +1,4 @@
-# offset
+# offset 刷新
 offset scrolltop
 offset,js 三大家族（offset/scroll/client）
 top 简单的手指触摸
